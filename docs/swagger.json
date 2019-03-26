@@ -1,0 +1,284 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "Core API",
+      "description": "The worlds funnest little API",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000/"
+      }
+    ],
+    "paths": {
+      "/categories": {
+        "get": {
+          "description": "Get all categories",
+          "responses": {
+            "200": {
+              "description": "Returned a list of categories",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/getAll"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "description": "Post new to categories",
+          "parameters": [
+            {
+              "name": "category",
+              "in": "header",
+              "description": "Category description",
+              "schema": {
+                "$ref": "#/components/schemas/postOne"
+              }
+            },
+            {
+              "name": "name",
+              "in": "header",
+              "description": "Item description",
+              "schema": {
+                "$ref": "#/components/schemas/postOne"
+              }
+            },
+            {
+              "name": "display_name",
+              "in": "header",
+              "description": "Category display name",
+              "schema": {
+                "$ref": "#/components/schemas/postOne"
+              }
+            },
+            {
+              "name": "description",
+              "in": "header",
+              "description": "Category description",
+              "schema": {
+                "$ref": "#/components/schemas/postOne"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Created new data"
+            }
+          }
+        }
+      },
+      "/categories/{id}": {
+        "get": {
+          "description": "Find item by id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id of item to return",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/getOne"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Found item by id"
+            }
+          }
+        },
+        "put": {
+          "description": "Update an existing category by id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id of category to update",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/getOne"
+              }
+            },
+            {
+              "in": "header",
+              "name": "name",
+              "description": "Updated item name",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/putOne"
+              }
+            },
+            {
+              "in": "header",
+              "name": "display_name",
+              "description": "Updated display name",
+              "required": false,
+              "schema": {
+                "$ref": "#/components/schemas/putOne"
+              }
+            },
+            {
+              "in": "header",
+              "name": "description",
+              "description": "Updated item description",
+              "required": false,
+              "schema": {
+                "$ref": "#/components/schemas/putOne"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Updated item"
+            }
+          }
+        },
+        "delete": {
+          "description": "Removes an existing item",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "Pet id to delete",
+              "schema": {
+                "$ref": "#/components/schemas/deleteOne"
+              }
+            }
+          ],
+          "responses": {
+            "404": {
+              "description": "Item not found"
+            }
+          }
+        }
+      },
+      "/products": {
+        "get": {
+          "description": "Get all categories",
+          "responses": {
+            "200": {
+              "description": "Returned a list of categories",
+              "content": {
+                "*/*": {
+                  "schema": {
+                    "$ref": "#/components/schemas/getAll"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "description": "Post to products",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "header",
+              "description": "Product description",
+              "schema": {
+                "$ref": "#/components/schemas/postOne"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Updated product"
+            }
+          }
+        }
+      },
+      "/products/{id}": {
+        "put": {
+          "description": "Update an existing product",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id of product to update",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/getOne"
+              }
+            },
+            {
+              "in": "header",
+              "name": "name",
+              "description": "Updated item name",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/putOne"
+              }
+            },
+            {
+              "in": "header",
+              "name": "display_name",
+              "description": "Updated display name",
+              "required": false,
+              "schema": {
+                "$ref": "#/components/schemas/putOne"
+              }
+            },
+            {
+              "in": "header",
+              "name": "description",
+              "description": "Updated item description",
+              "required": false,
+              "schema": {
+                "$ref": "#/components/schemas/putOne"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Updated item"
+            }
+          }
+        },
+        "delete": {
+          "description": "Deletes an existing product",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id of product to delete",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/deleteOne"
+              }
+            }
+          ],
+          "responses": {
+            "404": {
+              "description": "Item not found"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "getAll": {
+          "type": "object",
+          "example": [
+            "{}"
+          ]
+        },
+        "getOne": {
+          "type": "integer"
+        },
+        "postOne": {
+          "type": "string"
+        },
+        "putOne": {
+          "type": "string"
+        },
+        "deleteOne": {
+          "type": "integer"
+        }
+      }
+    }
+  }

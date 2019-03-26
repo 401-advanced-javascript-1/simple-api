@@ -1,0 +1,20 @@
+{
+  "categories": [
+    {
+      "category": "Electronics",
+      "name": "Electronics",
+      "display_name": "ELEC",
+      "description": "Things that run on electricity",
+      "_id": 2
+    }
+  ],
+  "products": [
+    {
+      "category": "Electronics",
+      "name": "Television",
+      "display_name": "TV",
+      "description": "Tool for watching shows",
+      "_id": 1
+    }
+  ]
+}
