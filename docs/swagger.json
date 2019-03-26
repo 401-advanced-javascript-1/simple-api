@@ -1,8 +1,8 @@
 {
     "openapi": "3.0.1",
     "info": {
-      "title": "Core API",
-      "description": "The worlds funnest little API",
+      "title": "Simple-API",
+      "description": "JS401's funnest little API",
       "version": "1.0.0"
     },
     "servers": [
@@ -28,38 +28,15 @@
           }
         },
         "post": {
-          "description": "Post new to categories",
+          "description": "Post new object to categories",
           "parameters": [
             {
-              "name": "category",
-              "in": "header",
-              "description": "Category description",
+              "in": "query",
+              "name": "body",
+              "description": "Category object to be added",
+              "required": true,
               "schema": {
-                "$ref": "#/components/schemas/postOne"
-              }
-            },
-            {
-              "name": "name",
-              "in": "header",
-              "description": "Item description",
-              "schema": {
-                "$ref": "#/components/schemas/postOne"
-              }
-            },
-            {
-              "name": "display_name",
-              "in": "header",
-              "description": "Category display name",
-              "schema": {
-                "$ref": "#/components/schemas/postOne"
-              }
-            },
-            {
-              "name": "description",
-              "in": "header",
-              "description": "Category description",
-              "schema": {
-                "$ref": "#/components/schemas/postOne"
+                "$ref": "#/components/schemas/categoryObject"
               }
             }
           ],
@@ -80,7 +57,7 @@
               "description": "Id of item to return",
               "required": true,
               "schema": {
-                "$ref": "#/components/schemas/getOne"
+                "$ref": "#/components/schemas/categoryObject"
               }
             }
           ],
@@ -103,7 +80,7 @@
               }
             },
             {
-              "in": "header",
+              "in": "query",
               "name": "name",
               "description": "Updated item name",
               "required": true,
@@ -112,7 +89,7 @@
               }
             },
             {
-              "in": "header",
+              "in": "query",
               "name": "display_name",
               "description": "Updated display name",
               "required": false,
@@ -121,7 +98,7 @@
               }
             },
             {
-              "in": "header",
+              "in": "query",
               "name": "description",
               "description": "Updated item description",
               "required": false,
@@ -180,7 +157,7 @@
               "in": "header",
               "description": "Product description",
               "schema": {
-                "$ref": "#/components/schemas/postOne"
+                "$ref": "#/components/schemas/categoryObject"
               }
             }
           ],
@@ -205,7 +182,7 @@
               }
             },
             {
-              "in": "header",
+              "in": "query",
               "name": "name",
               "description": "Updated item name",
               "required": true,
@@ -214,7 +191,7 @@
               }
             },
             {
-              "in": "header",
+              "in": "query",
               "name": "display_name",
               "description": "Updated display name",
               "required": false,
@@ -223,7 +200,7 @@
               }
             },
             {
-              "in": "header",
+              "in": "query",
               "name": "description",
               "description": "Updated item description",
               "required": false,
@@ -264,14 +241,29 @@
         "getAll": {
           "type": "object",
           "example": [
-            "{}"
+            [
+              {
+                "category": "string",
+                "name": "string",
+                "display_name": "string",
+                "description": "string"
+              }
+            ]
           ]
         },
         "getOne": {
           "type": "integer"
         },
-        "postOne": {
-          "type": "string"
+        "categoryObject": {
+          "type": "object",
+          "example": [
+            {
+              "category": "string",
+              "name": "string",
+              "display_name": "string",
+              "description": "string"
+            }
+          ]
         },
         "putOne": {
           "type": "string"
