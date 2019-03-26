@@ -2,8 +2,8 @@
 This lab uses json-server to run a simple server and Swagger to document the REST functionality of the server.
 
 ## Links and Resources
-[Github Repo](https://github.com/401-advanced-javascript-1/simple-api)
-[Travis](https://www.travis-ci.com/401-advanced-javascript-1/simple-api)
+- [Github Repo](https://github.com/401-advanced-javascript-1/simple-api)
+- [Travis](https://www.travis-ci.com/401-advanced-javascript-1/simple-api)
 
 ## Documentation
 [Swagger](https://editor.swagger.io/?_ga=2.173881315.1132580723.1553560602-1879537872.1553560602)
