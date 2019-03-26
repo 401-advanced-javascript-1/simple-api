@@ -1,11 +1,11 @@
 {
   "categories": [
     {
-      "category": "Electronics",
-      "name": "Electronics",
-      "display_name": "ELEC",
-      "description": "Things that run on electricity",
-      "_id": 2
+      "category": "Food",
+      "name": "Vegetables",
+      "display_name": "veggies",
+      "description": "Green things",
+      "_id": 1
     }
   ],
   "products": [

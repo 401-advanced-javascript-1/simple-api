@@ -1,5 +1,5 @@
 # JS401 - Simple-API
-This lab uses json-server to run a simple server and Swagger to document the REST functionality of the server.
+This lab uses json-server to run a simple server and Swagger to document the REST functionality of the server.  API can be edited through get, post, put, delete using syntax displayed in setup in the CLI.
 
 ## Links and Resources
 - [Github Repo](https://github.com/401-advanced-javascript-1/simple-api)
@@ -19,6 +19,8 @@ This lab uses json-server to run a simple server and Swagger to document the RES
     - Start json-server (json-server --id _id --watch ./data/db.json)
     - Get categories/products (http get :3000/categories)
     - Post to categories/products (echo '{"category": "Electronics", "name": "Television", "display_name": "TV", "description": "Tool for watching shows" }' | http post :3000/categories)
+    - Put to categories/products (echo '{"category": "Electronics", "name": "Radio", "display_name": "Rad", "description": "Tool for watching shows" }' | http put :3000/categories{id})
+    - Delete from categories/products (http delete :3000/categories/{id})
 
 ## Tests
 - N/A
